@@ -14,12 +14,12 @@ using namespace std;
 
 void print(int val) 
 {
-	cout << "Hello [" << val << "]\n";
+	cout << "[" << typeid(val).name() << "]\n";
 }
 
 void print(double val)
 {
-	cout << "Hello [" << val << "]\n";
+	cout << "[" << typeid(val).name() << "]\n";
 }
 
 struct Foo
@@ -31,8 +31,13 @@ struct Foo
 
 int main()
 {
-	Foo aFoo;
-	auto val = 32.1;
-	cout << typeid(val).name() << endl;	// Returns a structure, custom type.
-	cout << typeid(aFoo).name() << endl;
+	//Foo aFoo;
+	//auto val = 32.1;
+	//cout << typeid(val).name() << endl;	// Returns a structure, custom type.
+	//cout << typeid(aFoo).name() << endl;
+
+	auto  val = 32;
+	print(val);
+	auto  valD = 1.2;
+	print(valD);
 }
