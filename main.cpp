@@ -1,5 +1,6 @@
 #include <iostream>
 #include <typeinfo>		// RTTI
+#include <iomanip>
 using namespace std;
 
 /*
@@ -27,7 +28,7 @@ ostream& operator<<(ostream& out, const Foo& aFoo)
 template<typename T>
 void print(T val) 
 {
-	cout << "\33[92m[" << typeid(val).name() << "]\33[0m [" << val << "]\n";
+	cout << "\33[92m" << setw(10) << typeid(val).name() << "\33[0m " << setw(20) << val << "\n";
 }
 
 //void print(double val)
