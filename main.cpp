@@ -12,15 +12,17 @@ using namespace std;
 		- generic polymorphism / parametric polymorphism (templates).
 */
 
-void print(int val) 
+// Make a template function
+template<typename T>
+void print(T val) 
 {
 	cout << "[" << typeid(val).name() << "]\n";
 }
 
-void print(double val)
-{
-	cout << "[" << typeid(val).name() << "]\n";
-}
+//void print(double val)
+//{
+//	cout << "[" << typeid(val).name() << "]\n";
+//}
 
 struct Foo
 {
