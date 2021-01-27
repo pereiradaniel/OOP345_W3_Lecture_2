@@ -35,12 +35,15 @@ void print(T val)
 
 int main()
 {
+	// Template parameters must be known at compile-time!
+	constexpr int size = 10;
+
 	auto  val = 32;
-	print<int, 10>(val);
+	print<int, size>(val);
 
 	auto  valD = 1.2;
-	print<double, 10>(valD);
+	print<double, size>(valD);
 
 	Foo aFoo;
-	print<Foo, 10>(aFoo);
+	print<Foo, size>(aFoo);
 }
