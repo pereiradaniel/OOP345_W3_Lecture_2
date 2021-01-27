@@ -12,6 +12,16 @@ using namespace std;
 		- generic polymorphism / parametric polymorphism (templates).
 */
 
+void print(int val) 
+{
+	cout << "Hello [" << val << "]\n";
+}
+
+void print(double val)
+{
+	cout << "Hello [" << val << "]\n";
+}
+
 struct Foo
 {
 	// ..
