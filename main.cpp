@@ -12,11 +12,22 @@ using namespace std;
 		- generic polymorphism / parametric polymorphism (templates).
 */
 
+class Foo
+{
+	friend ostream& operator<<(ostream&, const Foo&);
+};
+
+ostream& operator<<(ostream& out, const Foo& aFoo)
+{
+	out << "Hello from Foo.";
+	return out;
+}
+
 // Make a template function
 template<typename T>
 void print(T val) 
 {
-	cout << "[" << typeid(val).name() << "]\n";
+	cout << "[" << typeid(val).name() << "] [" << val << "]\n";
 }
 
 //void print(double val)
@@ -24,10 +35,10 @@ void print(T val)
 //	cout << "[" << typeid(val).name() << "]\n";
 //}
 
-struct Foo
-{
-	// ..
-};
+//struct Foo
+//{
+//	// ..
+//};
 
 // RTTI - Run-Time Type Information
 
@@ -40,6 +51,10 @@ int main()
 
 	auto  val = 32;
 	print(val);
+
 	auto  valD = 1.2;
 	print(valD);
+
+	Foo aFoo;
+	print(aFoo);
 }
