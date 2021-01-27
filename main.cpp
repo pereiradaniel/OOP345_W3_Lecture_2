@@ -15,7 +15,7 @@ ostream& operator<<(ostream& out, const Foo& aFoo)
 }
 
 // Make a template function
-template<typename T, int N>
+template<typename T, int N = 10>
 void print(T val) 
 {
 	cout << "\33[92m" << setw(N) << typeid(val).name() << "\33[0m " << setw(20) << val << "\n";
@@ -28,7 +28,7 @@ int main()
 	constexpr int size = 10;
 
 	auto  val = 32;
-	print<int, size>(val);
+	print(val);
 
 	auto  valD = 1.2;
 	print<double, size>(valD);
