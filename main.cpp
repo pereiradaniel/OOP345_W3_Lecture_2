@@ -25,37 +25,22 @@ ostream& operator<<(ostream& out, const Foo& aFoo)
 }
 
 // Make a template function
-template<typename T>
+template<typename T, int N>
 void print(T val) 
 {
-	cout << "\33[92m" << setw(10) << typeid(val).name() << "\33[0m " << setw(20) << val << "\n";
+	cout << "\33[92m" << setw(N) << typeid(val).name() << "\33[0m " << setw(20) << val << "\n";
 }
-
-//void print(double val)
-//{
-//	cout << "[" << typeid(val).name() << "]\n";
-//}
-
-//struct Foo1
-//{
-//	// ..
-//};
 
 // RTTI - Run-Time Type Information
 
 int main()
 {
-	//Foo aFoo;
-	//auto val = 32.1;
-	//cout << typeid(val).name() << endl;	// Returns a structure, custom type.
-	//cout << typeid(aFoo).name() << endl;
-
 	auto  val = 32;
-	print(val);
+	print<int, 10>(val);
 
 	auto  valD = 1.2;
-	print(valD);
+	print<double, 10>(valD);
 
 	Foo aFoo;
-	print(aFoo);
+	print<Foo, 10>(aFoo);
 }
