@@ -27,7 +27,7 @@ ostream& operator<<(ostream& out, const Foo& aFoo)
 template<typename T>
 void print(T val) 
 {
-	cout << "[" << typeid(val).name() << "] [" << val << "]\n";
+	cout << "\33[92m[" << typeid(val).name() << "]\33[0m [" << val << "]\n";
 }
 
 //void print(double val)
@@ -35,7 +35,7 @@ void print(T val)
 //	cout << "[" << typeid(val).name() << "]\n";
 //}
 
-//struct Foo
+//struct Foo1
 //{
 //	// ..
 //};
