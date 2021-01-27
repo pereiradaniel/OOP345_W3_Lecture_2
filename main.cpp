@@ -3,16 +3,6 @@
 #include <iomanip>
 using namespace std;
 
-/*
-	Ad-hoc polymorphism
-		- overloading
-		- coercion
-
-	True polymorphism
-		- inclusion polymorphism (hierarchy of classes + virtual functions).
-		- generic polymorphism / parametric polymorphism (templates).
-*/
-
 class Foo
 {
 	friend ostream& operator<<(ostream&, const Foo&);
@@ -32,7 +22,6 @@ void print(T val)
 }
 
 // RTTI - Run-Time Type Information
-
 int main()
 {
 	// Template parameters must be known at compile-time!
@@ -47,3 +36,13 @@ int main()
 	Foo aFoo;
 	print<Foo, size>(aFoo);
 }
+
+/*
+	Ad-hoc polymorphism
+		- overloading
+		- coercion
+
+	True polymorphism
+		- inclusion polymorphism (hierarchy of classes + virtual functions).
+		- generic polymorphism / parametric polymorphism (templates).
+*/
